@@ -2,25 +2,63 @@
 
 ## Start Here
 
-If you have 10 minutes: extract both archives, run the 9 commands in the Evaluation Protocol below, and check each output against its expected result. The outputs are deterministic  there is no variance. Either they match or they don't.
+If you have 10 minutes: extract both archives, run the 9 commands in the Evaluation Protocol below, and compare each output against its expected result. The outputs are deterministic: there is no variance. Either they match or they do not.
 
-If you want to understand what you're running before executing: open any `.flux` or `.tenet` file in a text editor. Every file is commented in plain English at the top explaining exactly what it models, what the correct result is, and why. The two BNF grammar files (`FLUX_BNF_GRAMMAR.md`, `TENET_BNF_GRAMMAR.md`) define the full language specifications if you want to evaluate the languages formally. The research papers in `research_papers/` provide the theoretical foundations.
+If you want to understand what you're running before executing, open any `.flux` or `.tenet` file in a text editor. Every file is commented in plain English at the top, explaining exactly what it models, what the correct result is, and why.
 
-The 9 tests cover two languages across five domains: graph routing, boolean logic, financial invariants, cooperative game theory, and mechanism design. You do not need prior knowledge of the Axiom architecture to evaluate them — the files are self-contained.
+The two BNF grammar files (`FLUX_BNF_GRAMMAR.md`, `TENET_BNF_GRAMMAR.md`) define the full language specifications for formal evaluation. The research papers in `research_papers/` provide the theoretical foundations.
+
+The 9 tests cover two languages across five domains: graph routing, boolean logic, financial invariants, cooperative game theory, and mechanism design. You do not need prior knowledge of the Axiom architecture to evaluate them, the files are self-contained.
 
 ---
 
 ## Overview
-This repository contains the macOS-compiled binaries for the **Flux Compiler** and the **Tenet Symbolic Engine**, as referenced in the paper: *"Imitation Is Not Intelligence: A Formal Proof on the Limits of Statistical Approximation"*.
 
-The immediate purpose of this evaluation is straightforward: to verify that an operating system exists, that two programming languages built on top of it execute correctly, and that they function together as a cohesive system. These are engineering claims, not theoretical ones — and they are independently verifiable by any qualified observer.
+This repository contains the macOS-compiled binaries for the **Flux Compiler** and the **Tenet Symbolic Engine**, as referenced in the paper *Imitation Is Not Intelligence: The Mathematical Case for Neurosymbolic Architecture*.
 
-The broader research context — a neurosymbolic AI-native operating system — is documented in the accompanying papers. That is the ultimate goal this engineering foundation is built toward.
+The immediate purpose of this evaluation is straightforward: verify that an operating system exists, that two programming languages built on top of it execute correctly, and that they function together as a cohesive system. These are engineering claims, not theoretical ones, and they are independently verifiable by any qualified observer.
+
+The broader research context; a neurosymbolic AI-native operating system, is documented in the accompanying papers. This engineering foundation is the executable substrate for that larger research program.
+
+---
+
+## Research Lineage
+
+This repository is the executable systems extension of the research thesis introduced in:
+
+**Imitation Is Not Intelligence: The Mathematical Case for Neurosymbolic Architecture**
+
+That paper formalizes the impossibility of purely imitation-based systems reliably solving structurally disjoint reasoning spaces and proposes the **Think Test**, a benchmark requiring deterministic verification traces.
+
+The present repository operationalizes that thesis.
+
+Where the paper establishes the theoretical necessity of deterministic verification, this validation engine demonstrates the concrete implementation of that principle through two real languages:
+
+- **Flux** → mathematical reasoning and invariant enforcement
+- **Tenet** → symbolic game-theoretic and mechanism design verification
+
+Together, the binaries, test suite, and deterministic expected outputs serve as the engineering realization of the paper’s central claim:
+
+> intelligence must be **provable, verifiable, and structurally constrained**, not merely statistically imitated.
+
+---
 
 ## Theoretical Foundations
+
 For the formal mathematical specifications and language definitions, please refer to the original research papers included in this repository:
-* [Flux: Eliminating the ASCII Barrier in Mathematical Programming](./research_papers/flux.pdf)
-* [Tenet: A Domain-Specific Language for Game-Theoretic Modeling](./research_papers/tenet.pdf)
+
+- [Flux: Eliminating the ASCII Barrier in Mathematical Programming](./research_papers/flux.pdf)
+- [Tenet: A Domain-Specific Language for Game-Theoretic Modeling](./research_papers/tenet.pdf)
+- [Imitation Is Not Intelligence: The Mathematical Case for Neurosymbolic Architecture](./research_papers/Imitation_is_not_Intelligence.pdf)
+
+---
+
+## Setup
+
+### 1. Extract both archives
+```bash
+tar -xzf flux-1.1.0-macos-arm64.tar.gz
+tar -xzf tenet-1.0.0-macos-arm64.tar.gz
 
 ## Setup
 
@@ -130,3 +168,21 @@ A successful execution of this test suite confirms the following:
 If all nine test categories produce their expected outputs, the Axiom
 neurosymbolic architecture is functioning as described in the accompanying
 research papers.
+## Research Lineage
+
+This repository is the executable systems extension of the research thesis introduced in:
+
+**Imitation Is Not Intelligence: The Mathematical Case for Neurosymbolic Architecture**
+
+That paper formalizes the impossibility of purely imitation-based systems reliably solving structurally disjoint reasoning spaces and proposes the **Think Test**, a benchmark requiring deterministic verification traces.
+
+The present repository operationalizes that thesis.
+
+Where the paper establishes the theoretical necessity of deterministic verification, this validation engine demonstrates the concrete implementation of that principle through two real languages:
+
+- **Flux** → mathematical reasoning and invariant enforcement
+- **Tenet** → symbolic game-theoretic and mechanism design verification
+
+Together, the binaries, test suite, and expected deterministic outputs serve as the engineering realization of the paper’s central claim:
+
+> intelligence must be **provable, verifiable, and structurally constrained**, not merely statistically imitated.
